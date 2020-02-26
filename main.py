@@ -105,7 +105,7 @@ def main(stdscr):
         heading = 2
         snake = move_head(snake, heading)
         print_board(stdscr, snake, fruit)
-    elif c == ord('d'):
+    else:
         heading = 3
         snake = move_head(snake, heading)
         print_board(stdscr, snake, fruit)
@@ -146,11 +146,13 @@ def main(stdscr):
             snake = move_head(snake, heading)
             print_board(stdscr, snake, fruit)
         elif c == ord('q'):
+            exit_game(stdscr)
             break
         # Move the snake on no input
-        else:
+        elif c == -1:
             snake = move_head(snake, heading)
             print_board(stdscr, snake, fruit)
+        
 
         # Sleep a bit
         time.sleep(0.25)
